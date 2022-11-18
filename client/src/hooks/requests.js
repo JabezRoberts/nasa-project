@@ -1,6 +1,15 @@
+const API_URL = 'http://localhost:8000/';
+
+
 async function httpGetPlanets() {
+
   // TODO: Once API is ready.
   // Load planets and return as JSON.
+
+  //const response = await fetch('http://localhost:8000/planets'); //client is on PORT 3000 but backend is on PORT 8000 so we need to specify that when we make our request
+  //all our http functions/request are going to be made against our single api so we move it into API_URL variable and rewrite above code as:
+  const response = await fetch(`${API_URL}/planets`);
+  return await response.json();
 }
 
 async function httpGetLaunches() {
